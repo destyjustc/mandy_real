@@ -102,6 +102,16 @@ img {
 	display:block;
 	width:100%;
 }
+.logo_pic{
+	display:inline-block;
+}
+.icon-two{
+	display: inline-block;
+	margin-left: 5px;
+}
+.icon-two img{
+	height:93px;
+}
 .logo img{
 	width: 108px;
 }
@@ -137,13 +147,23 @@ img {
 .follow li a span {
 	margin:0px 5px;
 }
+.head_title{
+	display: inline-block;
+	font-size: 28px;
+	margin-top: 43px;
+	font-weight: 800;
+}
 .header_contact{
 	display: inline-block;
-	margin-top: 41px;
-	float: right;
+	/* margin-top: 41px; */
+	/* float: right; */
 	margin-right: 20px;
 	font-size: 1.2em;
 	font-weight: 600;
+	/* position: absolute; */
+	/* right: 10px; */
+	float: right;
+	margin-top: 30px;
 }
 
 .nav_menu ul {
@@ -282,6 +302,7 @@ img {
 .main_content.footer .box2{
 	max-width: 1000px;
 	margin: auto;
+	margin-top: 37px;
 }
 .border-top {
 	border-top:1px solid #c7c7c7;
@@ -342,10 +363,14 @@ img {
 	font-size:1.2em;
 	margin-left: 6%;
 }
+.camera_pag{
+	display:none;
+}
 .box2 {
 	padding:60px 0;
 	position:relative;
 	color: #fff;
+	padding-top: 0;
 }
 .home-content .left-column{
 	display: inline-block;

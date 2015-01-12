@@ -7,14 +7,14 @@
 
 ?>
 
-<div class="title"><?php echo zippy_options_array('homepage_short_description');?></div>
-<div class="border-top"></div>
+<?php //echo zippy_options_array('homepage_short_description');?>
+<!-- <div class="border-top"></div> -->
 
 <div class="box">
 <div class="home-content">
 	<div class="left-column">
 		<div class="profile-image">
-			<img src="http://www.haoyummy.com/mandyliang/?p=33">
+			<img src="http://mandy.real.com/wp-content/uploads/2015/01/mandy-busn.jpg">
 		</div>
 		<?php
 			$lang = $_GET['lang'];
