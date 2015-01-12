@@ -83,17 +83,27 @@ img {
 	background-color: #FF66A3;
 	color: #fff;
 }
+.sub_line{
+	display: inline-block;
+	float: left;
+	margin-top: 54px;
+	font-family: "Times New Roman", Times, serif;
+	color: #000066;
+	text-align: center;
+	margin-left: 30px;
+}
 .head_content .header_content_inner{
 	max-width: 1000px;
 	margin: auto;
+	margin-bottom: 24px;
 }
 .logo {
 	display: inline-block;
 	float:left;
 	/*margin:20px 0px;*/
-	width:260px;
+	width:150px;
 	overflow:hidden;
-	margin-top:10px;
+	margin-top:25px;
 }
 .logo a {
 	outline:none;
@@ -115,7 +125,15 @@ img {
 	height:93px;
 }
 .logo img{
-	width: 108px;
+	width: 70px;
+	height: 60px;
+}
+.tele{
+	width: 370px;
+	font-size: 64px;
+	margin-right: 10px;
+	font-family: "Arial Black", Gadget, sans-serif;
+	text-shadow: 1px 1px #ddd;
 }
 .tagline{text-transform:uppercase; color:#fff !important;font-size: 1.2em;}
 .logo a span {
@@ -150,13 +168,33 @@ img {
 	margin:0px 5px;
 }
 .head_title{
+	float: left;
 	display: inline-block;
+	width: 548px;
 	font-size: 28px;
-	margin-top: 28px;
+	margin-top: 15px;
 	font-weight: 800;
+}
+.realtor_en{
+	font-size: 80px;
+	display: inline-block;
+	float:left;
+	padding-top: 20px;
+	font-family: "Times New Roman", Times, serif;
+}
+.realtor_en span{
+	color: #000066;
 }
 .realtor_zh{
 	margin-bottom:14px;
+	display: inline-block;
+	font-size: 40px;
+	margin-left: 15px;
+	text-shadow: 1px 1px #ccc;
+}
+.realtor_zh span{
+	display:block;
+	margin-top: 25px;
 }
 .header_contact{
 	display: inline-block;
@@ -165,9 +203,6 @@ img {
 	margin-right: 20px;
 	font-size: 1.2em;
 	font-weight: 600;
-	/* position: absolute; */
-	/* right: 10px; */
-	float: right;
 	margin-top: 30px;
 	margin-bottom: 19px;
 }
@@ -271,6 +306,9 @@ img {
 }
 .camera_wrap .camera_pag .camera_pag_ul {
 	padding-right:50px!important;
+}
+.camera_caption{
+	display: none !important;
 }
 .camera_caption .slide-title a {
 	font-weight:bold;

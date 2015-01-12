@@ -589,7 +589,7 @@ echo '</div></div></div>';
            if(jQuery("div.banner").length>0){
 			jQuery("#camera_wrap_banner").camera({
 				thumbnails: true,
-				height: "200px",
+				height: "120px",
 				easing: "'.($easing?$easing:"easeInOutExpo").'",
 				fx: "'.($effect?$effect:"random").'",
 				time: '.($slide_time?$slide_time:"4000").'

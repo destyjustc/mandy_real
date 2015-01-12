@@ -16,26 +16,28 @@
 <div class="head">
 <div class="head_content">
 	<div class="header_content_inner">
-<div class="logo"><div class="logo_pic"><a href="<?php echo esc_url(home_url('/')); ?>"><?php if ( zippy_options_array('logo') ) { ?>
-            <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
-            <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
-			</div>
-			<div class="icon-two"><img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
-			</div>
-			<div class="head_title">
-			<div class="realtor_zh">梁佩美</div>
-			<div class="realtor_en">Mandy Liang</div>
-			</div>
+	<div class="head_title">
+	<div class="realtor_en">Mandy <span>Liang<span></div>
+	<div class="sub_line">Personal Real Estate Corporation</div>
+	<div class="realtor_zh"><span>梁</span><span>佩</span><span>美</span></div>
+	</div>
+	<div class="logo"><div class="logo_pic"><a href="<?php echo esc_url(home_url('/')); ?>"><?php if ( zippy_options_array('logo') ) { ?>
+    <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
+    <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
+	</div>
+	<div class="icon-two"><img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
+	</div>
 <div class="header_contact">
+	<div class="tele">604.720.1822</div>
 	<?php
 		$out = "";
 		$lang = $_GET['lang'];
 		if ($lang!='en'){
-			$out .= '<div>电话: 604-439-0068</div>';
+			$out .= '<div>电话: 604-720-1822</div>';
 			$out .= '<div>传真: 604-439-0512</div>';
 			$out .= '<div>邮箱: mandyliang@gmail.com</div>';
 		}
-		print $out;
+		// print $out;
 	?>
 </div>
 </div> <!-- header content inner end -->
