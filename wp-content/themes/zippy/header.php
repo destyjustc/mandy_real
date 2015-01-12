@@ -20,7 +20,7 @@
             <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
             <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
 			</div>
-			<div class="icon-two"><img src="http://mandy.real.com/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
+			<div class="icon-two"><img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
 			</div>
 			<div class="head_title">
 			<div class="realtor_zh">梁佩美</div>
