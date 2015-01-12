@@ -15,14 +15,16 @@
 <body <?php body_class(); ?>>
 <div class="head">
 <div class="head_content">
+	<div class="header_content_inner">
 <div class="logo"><div class="logo_pic"><a href="<?php echo esc_url(home_url('/')); ?>"><?php if ( zippy_options_array('logo') ) { ?>
             <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
             <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
 			</div>
 			<div class="tagline"><?php echo  get_bloginfo( 'description' );?></div>
 			</div>
+</div>
 <div id="nav">
-<?php echo zippy_get_social_network(array("facebook",'twitter','google_plus','youtube','pinterest','rss'));?>
+<?php //echo zippy_get_social_network(array("facebook",'twitter','google_plus','youtube','pinterest','rss'));?>
 <div class="clear"></div>
    <div class="nav_menu">
 
