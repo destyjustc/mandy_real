@@ -152,8 +152,11 @@ img {
 .head_title{
 	display: inline-block;
 	font-size: 28px;
-	margin-top: 43px;
+	margin-top: 28px;
 	font-weight: 800;
+}
+.realtor_zh{
+	margin-bottom:14px;
 }
 .header_contact{
 	display: inline-block;
