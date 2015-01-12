@@ -357,6 +357,9 @@ img {
 	width: 68%;
 	font-size: 1.1em;
 }
+.home-content .right-column .social-links li{
+	display: inline-block;
+}
 .comment-wrapper {
 	margin-top:50px;
 	clear:both;

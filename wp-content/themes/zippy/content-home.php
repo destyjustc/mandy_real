@@ -40,6 +40,10 @@
 				print $out;
 			?>
 		</div>
+		<div class="border-top"></div>
+		<div class="social-links">
+			<?php echo zippy_get_social_network(array("facebook",'twitter','google_plus','youtube','pinterest','rss'));?>
+		</div>
 	</div>
 </div>
 
