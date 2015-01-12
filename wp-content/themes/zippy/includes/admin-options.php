@@ -52,7 +52,7 @@ function optionsframework_options() {
       
 	  //Tagline Typography Defaults
 	$tagline_typography_defaults = array(
-		'size' => '13px',
+		'size' => '16px',
 		'face' => 'georgia',
 		'style' => 'normal',
 		'color' => '#fff' );

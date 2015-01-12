@@ -11,40 +11,39 @@
 <div class="border-top"></div>
 
 <div class="box">
+<div class="home-content">
+	<div class="left-column">
+		<div class="profile-image">
+			<img src="http://mandy.real.com/wp-content/uploads/2015/01/mandy-busn.jpg">
+		</div>
+		<?php
+			$lang = $_GET['lang'];
+			$out = "";
+			$out.='<div class="profile-address">';
+			$out.='<div>3107 Kingsway</div>';
+			$out.='<div>Vancouver,BC</div>';
+			$out.='<div>V5R 5J9</div>';
+			$out.='</div>';
+			print $out;
+		?>
+	</div>
+	<div class="right-column">
+		<div class="content">
+			<?php
+				$out = "";
+				if ($lang!='en'){
+					$out.='<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in quam at lacus volutpat consequat. Nulla magna diam, fermentum ut hendrerit vitae, sagittis quis augue. Integer ut varius sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent ac ornare diam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>';
+					$out.='<p>In maximus, ligula a tempor sodales, lectus lacus convallis sapien, sed aliquet dui enim non tortor. Mauris id nibh finibus, congue erat nec, rutrum justo. Maecenas blandit ipsum enim, vel suscipit mauris maximus vehicula. Proin pulvinar erat sit amet nisl tincidunt, nec sodales magna imperdiet. Phasellus venenatis ipsum quis tincidunt imperdiet. Praesent commodo tincidunt vestibulum. Sed vel interdum mi, vel mollis lorem. Integer elit lacus, scelerisque nec libero et, pulvinar mattis ipsum.</p>';
+				}else{
 
-<div class="columns-3 left last33">
-<h2><?php echo zippy_options_array('key_feature_title_1');?></h2>
-<?php 
-$key_feature_image = zippy_options_array('key_feature_image_1');
-if($key_feature_image !=""){?>
-<div class="img"><img width="260" src="<?php echo zippy_options_array('key_feature_image_1');?>" alt="" /></div>
-<?php }?>
-<p class="text"><?php echo zippy_options_array('key_feature_description_1');?></p>
-<span class="more right"><a href="<?php echo esc_url(zippy_options_array('key_feature_link_1'));?>" target=""><?php _e("Learn More »","zippy");?></a></span>
+				}
+				print $out;
+			?>
+		</div>
+	</div>
 </div>
-<div class="columns-3 left">
-<h2><?php echo zippy_options_array('key_feature_title_2');?></h2>
-<?php 
-$key_feature_image = zippy_options_array('key_feature_image_2');
-if($key_feature_image !=""){?>
-<div class="img"><img width="260" src="<?php echo zippy_options_array('key_feature_image_2');?>" alt="" /></div>
-<?php }?>
-<p class="text"><?php echo zippy_options_array('key_feature_description_2');?></p>
-<span class="more right"><a href="<?php echo esc_url(zippy_options_array('key_feature_link_2'));?>" target=""><?php _e("Learn More »","zippy");?></a></span>
 
-</div>
 
-<div class="columns-3 left last3">
-<h2><?php echo zippy_options_array('key_feature_title_3');?></h2>
-<?php 
-$key_feature_image = zippy_options_array('key_feature_image_3');
-if($key_feature_image !=""){?>
-<div class="img"><img  width="260" src="<?php echo zippy_options_array('key_feature_image_3');?>" alt="" /></div>
-<?php }?>
-<p class="text"><?php echo zippy_options_array('key_feature_description_3');?></p>
-<span class="more right"><a href="<?php echo esc_url(zippy_options_array('key_feature_link_3'));?>" target=""><?php _e("Learn More »","zippy");?></a></span>
-
-</div>
 <div class="clear"></div>
 </div>
 <div class="border-top"></div>

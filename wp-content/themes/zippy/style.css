@@ -102,7 +102,10 @@ img {
 	display:block;
 	width:100%;
 }
-.tagline{text-transform:uppercase; color:#fff !important;}
+.logo img{
+	width: 108px;
+}
+.tagline{text-transform:uppercase; color:#fff !important;font-size: 1.2em;}
 .logo a span {
 	font-size:16px;
 	font-weight:bold;
@@ -110,7 +113,7 @@ img {
 #nav {
 	width:100%;
 	clear:both;
-	background-color: #FFB280;
+	background-color: #9966FF;
 	/*float:right;*/
 	/*width:700px;*/
 }
@@ -136,9 +139,11 @@ img {
 }
 .header_contact{
 	display: inline-block;
-	margin-top: 14px;
+	margin-top: 41px;
 	float: right;
 	margin-right: 20px;
+	font-size: 1.2em;
+	font-weight: 600;
 }
 
 .nav_menu ul {
@@ -324,9 +329,33 @@ img {
 	font-size:14px;
 	padding:20px 0px;
 }
+.box .home-content{
+
+}
+.box .home-content .left-column{
+}
+.box .home-content .left-column .profile-image img{
+	width: 190px;
+	margin-bottom:10px;
+}
+.box .home-content .left-column .profile-address{
+	font-size:1.2em;
+	margin-left: 6%;
+}
 .box2 {
 	padding:60px 0;
 	position:relative;
+	color: #fff;
+}
+.home-content .left-column{
+	display: inline-block;
+	width: 30%;
+	float: left;
+}
+.home-content .right-column{
+	display: inline-block;
+	width: 68%;
+	font-size: 1.1em;
 }
 .comment-wrapper {
 	margin-top:50px;
@@ -345,6 +374,9 @@ img {
 	text-align:center;
 	padding:25px 0 20px 0;
 	line-height:30px;
+}
+.box2 h2 a{
+	color:#fff;
 }
 .box2 .text {
 	text-align:center;
