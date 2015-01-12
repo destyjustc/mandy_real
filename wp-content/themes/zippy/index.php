@@ -56,5 +56,6 @@ dynamic_sidebar(1) ;
 <?php
 	}
 ?>
+</div>
 <div class="main_content"><div class="border-top"></div></div><!--main_content-->
 <?php get_footer(); ?>

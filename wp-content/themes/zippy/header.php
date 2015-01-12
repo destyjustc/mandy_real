@@ -22,7 +22,19 @@
 			</div>
 			<div class="tagline"><?php echo  get_bloginfo( 'description' );?></div>
 			</div>
+<div class="header_contact">
+	<?php
+		$out = "";
+		$lang = $_GET['lang'];
+		if ($lang!='en'){
+			$out .= '<div>电话: 604-439-0068</div>';
+			$out .= '<div>传真: 604-439-0512</div>';
+			$out .= '<div>邮箱: mandyliang@gmail.com</div>';
+		}
+		print $out;
+	?>
 </div>
+</div> <!-- header content inner end -->
 <div id="nav">
 <?php //echo zippy_get_social_network(array("facebook",'twitter','google_plus','youtube','pinterest','rss'));?>
 <div class="clear"></div>

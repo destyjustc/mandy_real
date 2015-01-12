@@ -48,14 +48,14 @@ function optionsframework_options() {
 		'size' => '15px',
 		'face' => 'georgia',
 		'style' => 'normal',
-		'color' => '#666666' );
+		'color' => '#fff' );
       
 	  //Tagline Typography Defaults
 	$tagline_typography_defaults = array(
 		'size' => '13px',
 		'face' => 'georgia',
 		'style' => 'normal',
-		'color' => '#666666' );
+		'color' => '#fff' );
 		
 	// Typography Options
 	$typography_options = array(
