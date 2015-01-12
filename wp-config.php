@@ -26,6 +26,7 @@ define('DB_PASSWORD', '4674286');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
+// define('DB_HOST', 'haoyummycom.ipagemysql.com');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -52,7 +53,10 @@ define('LOGGED_IN_SALT',   '`S|Tf.7h}0wB`_/R8a+%RO$2|x|mDiRm9yE:S8|-UoVSQtP.Sfa6
 define('NONCE_SALT',       '60;!Gj/0?V22;9oK_R#R<saR%JV-LT$|t+Ji|KpXbE7pE4irj6F:iBQy?3:y_8h6');
 
 /**#@-*/
-
+define('WP_HOME','http://mandy.real.com');
+define('WP_SITEURL','http://mandy.real.com');
+// define('WP_HOME','http://www.haoyummy.com/mandyliang');
+// define('WP_SITEURL','http://www.haoyummy.com/mandyliang');
 /**
  * WordPress Database Table prefix.
  *

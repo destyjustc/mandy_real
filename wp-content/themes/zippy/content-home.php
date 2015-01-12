@@ -14,7 +14,7 @@
 <div class="home-content">
 	<div class="left-column">
 		<div class="profile-image">
-			<img src="http://mandy.real.com/wp-content/uploads/2015/01/mandy-busn.jpg">
+			<img src="http://www.haoyummy.com/mandyliang/?p=33">
 		</div>
 		<?php
 			$lang = $_GET['lang'];
