@@ -18,14 +18,8 @@
 	<div class="header_content_inner">
 	<div class="head_title">
 	<div class="realtor_en">Mandy <span>Liang<span></div>
-	<div class="sub_line">Personal Real Estate Corporation</div>
+	<div class="sub_line">Real Estate Specialist</div>
 	<div class="realtor_zh"><span>梁</span><span>佩</span><span>美</span></div>
-	</div>
-	<div class="logo"><div class="logo_pic"><a href="<?php echo esc_url(home_url('/')); ?>"><?php if ( zippy_options_array('logo') ) { ?>
-    <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
-    <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
-	</div>
-	<div class="icon-two"><img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
 	</div>
 <div class="header_contact">
 	<div class="tele">604.720.1822</div>
@@ -40,6 +34,12 @@
 		// print $out;
 	?>
 </div>
+<div class="logo"><div class="logo_pic"><a href="<?php echo esc_url(home_url('/')); ?>"><?php if ( zippy_options_array('logo') ) { ?>
+    <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
+    <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
+	</div>
+	<div class="icon-two"><img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
+	</div>
 </div> <!-- header content inner end -->
 <div id="nav">
 <?php //echo zippy_get_social_network(array("facebook",'twitter','google_plus','youtube','pinterest','rss'));?>
