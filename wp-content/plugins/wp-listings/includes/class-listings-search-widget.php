@@ -30,7 +30,7 @@ class WP_Listings_Search_Widget extends WP_Widget {
 
 		if ( $instance['title'] ) echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
 
-		echo '<form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" ><input type="hidden" value="" name="s" /><input type="hidden" value="listing" name="post_type" />';
+		echo '<form role="search" method="get" id="searchform_lst" action="' . home_url( '/' ) . '" ><input type="hidden" value="" name="s" /><input type="hidden" value="listing" name="post_type" />';
 
 		foreach ( $listings_taxonomies as $tax => $data ) {
 			if ( ! isset( $instance[$tax] ) || ! $instance[$tax] )

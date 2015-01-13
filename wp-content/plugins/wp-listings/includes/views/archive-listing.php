@@ -137,8 +137,9 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-get_sidebar( 'content' );
-get_sidebar();
+echo do_shortcode( '[listings]' );
+// get_sidebar( 'content' );
+// get_sidebar();
 get_footer();
 
 }

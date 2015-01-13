@@ -18,7 +18,6 @@ function enqueue_single_listing_scripts() {
 }
 
 function trans_label($label){
-	var_dump($label);
 	switch ($label) {
 		case 'Price:':
 			return '价格：';
@@ -50,12 +49,21 @@ function trans_label($label){
 		case 'Lot Square Feet:':
 			return '土地面积：';
 			break;
+		case 'Bedrooms:':
+			return '卧室数目：';
+			break;
+		case 'Bathrooms:':
+			return '浴室数目：';
+			break;
+		case 'Pool:':
+			return '游泳池：';
+			break;
 	}
 	return $label;
 }
 
 function single_listing_post_content() {
-
+	$lang = $_GET['lang'];
 	global $post;
 
 	?>
@@ -221,8 +229,12 @@ function single_listing_post_content() {
 					foreach ( (array) $details_instance->property_details['col2'] as $label => $key ) {
 						$detail_value = esc_html( get_post_meta($post->ID, $key, true) );
 						if (! empty( $detail_value ) ) :
-							$tmp = trans_label($label);
-							printf( $pattern, $key, esc_html( $label ), $detail_value );
+							if ($lang=='en'){
+								printf( $pattern, $key, esc_html( $label ), $detail_value );
+							}else{
+								$tmp = trans_label($label);
+								printf( $pattern, $key, esc_html( $tmp ), $detail_value );
+							}
 						endif;
 					}
 					echo '</tbody>';
