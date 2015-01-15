@@ -39,7 +39,7 @@ get_header(); ?>
 		?>
    <?php 
 echo '<div class="comment-wrapper">';
-comments_template(); 
+// comments_template(); 
 echo '</div>';
 	?>	
  </div>

@@ -62,6 +62,8 @@ function wp_listings_shortcode($atts, $content = null) {
      */
     global $post;
 
+    $lang=$_GET['lang'];
+
     $listings_array = get_posts( $query_args );
 
     $count = 0;
@@ -93,18 +95,32 @@ function wp_listings_shortcode($atts, $content = null) {
         }
 
         $output .= '</div><!-- .listing-thumb-meta --></div><!-- .listing-widget-thumb -->';
+        if($lang=='en'){
+            if ( '' != get_post_meta( $post->ID, '_listing_open_house', true ) ) {
+                $output .= '<span class="listing-open-house">Open House: ' . get_post_meta( $post->ID, '_listing_open_house', true ) . '</span>';
+            }
 
-        if ( '' != get_post_meta( $post->ID, '_listing_open_house', true ) ) {
-            $output .= '<span class="listing-open-house">Open House: ' . get_post_meta( $post->ID, '_listing_open_house', true ) . '</span>';
+            $output .= '<div class="listing-widget-details"><h3 class="listing-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            $output .= '<p class="listing-address"><span class="listing-address">' . wp_listings_get_address() . '</span><br />';
+            $output .= '<span class="listing-city-state-zip">' . wp_listings_get_city() . ', ' . wp_listings_get_state() . ' ' . get_post_meta( $post->ID, '_listing_zip', true ) . '</span></p>';
+
+            if ( '' != get_post_meta( $post->ID, '_listing_bedrooms', true ) || '' != get_post_meta( $post->ID, '_listing_bathrooms', true ) || '' != get_post_meta( $post->ID, '_listing_sqft', true )) {
+                $output .= '<ul class="listing-beds-baths-sqft"><li class="beds">' . get_post_meta( $post->ID, '_listing_bedrooms', true ) . '<span>Beds</span></li> <li class="baths">' . get_post_meta( $post->ID, '_listing_bathrooms', true ) . '<span>Baths</span></li> <li class="sqft">' . get_post_meta( $post->ID, '_listing_sqft', true ) . '<span>Sq ft</span></li></ul>';
+            } 
+        }else{
+            if ( '' != get_post_meta( $post->ID, '_listing_open_house', true ) ) {
+                $output .= '<span class="listing-open-house">开放日: ' . get_post_meta( $post->ID, '_listing_open_house', true ) . '</span>';
+            }
+
+            $output .= '<div class="listing-widget-details"><h3 class="listing-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
+            $output .= '<p class="listing-address"><span class="listing-address">' . wp_listings_get_address() . '</span><br />';
+            $output .= '<span class="listing-city-state-zip">' . wp_listings_get_city() . ', ' . wp_listings_get_state() . ' ' . get_post_meta( $post->ID, '_listing_zip', true ) . '</span></p>';
+
+            if ( '' != get_post_meta( $post->ID, '_listing_bedrooms', true ) || '' != get_post_meta( $post->ID, '_listing_bathrooms', true ) || '' != get_post_meta( $post->ID, '_listing_sqft', true )) {
+                $output .= '<ul class="listing-beds-baths-sqft"><li class="beds">' . get_post_meta( $post->ID, '_listing_bedrooms', true ) . '<span>卧室</span></li> <li class="baths">' . get_post_meta( $post->ID, '_listing_bathrooms', true ) . '<span>浴室</span></li> <li class="sqft">' . get_post_meta( $post->ID, '_listing_sqft', true ) . '<span>平方尺</span></li></ul>';
+            }
         }
-
-        $output .= '<div class="listing-widget-details"><h3 class="listing-title"><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
-        $output .= '<p class="listing-address"><span class="listing-address">' . wp_listings_get_address() . '</span><br />';
-        $output .= '<span class="listing-city-state-zip">' . wp_listings_get_city() . ', ' . wp_listings_get_state() . ' ' . get_post_meta( $post->ID, '_listing_zip', true ) . '</span></p>';
-
-        if ( '' != get_post_meta( $post->ID, '_listing_bedrooms', true ) || '' != get_post_meta( $post->ID, '_listing_bathrooms', true ) || '' != get_post_meta( $post->ID, '_listing_sqft', true )) {
-            $output .= '<ul class="listing-beds-baths-sqft"><li class="beds">' . get_post_meta( $post->ID, '_listing_bedrooms', true ) . '<span>Beds</span></li> <li class="baths">' . get_post_meta( $post->ID, '_listing_bathrooms', true ) . '<span>Baths</span></li> <li class="sqft">' . get_post_meta( $post->ID, '_listing_sqft', true ) . '<span>Sq ft</span></li></ul>';
-        }
+        
 
         $output .= '</div><!-- .listing-widget-details --></div><!-- .listing-wrap -->';
 

@@ -13,7 +13,7 @@ function archive_listing_loop() {
 		global $post;
 
 		$count = 0; // start counter at 0
-
+		$lang = $_GET['lang'];
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
 
@@ -28,29 +28,46 @@ function archive_listing_loop() {
 			}
 
 			$loop .= sprintf( '<div class="listing-thumb-meta">' );
-
-			if ( '' != get_post_meta( $post->ID, '_listing_text', true ) ) {
-				$loop .= sprintf( '<span class="listing-text">%s</span>', get_post_meta( $post->ID, '_listing_text', true ) );
-			} elseif ( '' != wp_listings_get_property_types() ) {
-				$loop .= sprintf( '<span class="listing-property-type">%s</span>', wp_listings_get_property_types() );
+			if($lang=="en"){
+				if ( '' != get_post_meta( $post->ID, '_listing_text', true ) ) {
+					$loop .= sprintf( '<span class="listing-text">%s</span>', explode("/",get_post_meta( $post->ID, '_listing_text', true ))[0] );
+				} elseif ( '' != wp_listings_get_property_types() ) {
+					$loop .= sprintf( '<span class="listing-property-type">%s</span>', wp_listings_get_property_types() );
+				}
+			}else{
+				if ( '' != get_post_meta( $post->ID, '_listing_text', true ) ) {
+					$loop .= sprintf( '<span class="listing-text">%s</span>', explode("/",get_post_meta( $post->ID, '_listing_text', true ))[1] );
+				} elseif ( '' != wp_listings_get_property_types() ) {
+					$loop .= sprintf( '<span class="listing-property-type">%s</span>', wp_listings_get_property_types() );
+				}
 			}
-
 			if ( '' != get_post_meta( $post->ID, '_listing_price', true ) ) {
 				$loop .= sprintf( '<span class="listing-price">%s</span>', get_post_meta( $post->ID, '_listing_price', true ) );
 			}
 
 			$loop .= sprintf( '</div><!-- .listing-thumb-meta --></div><!-- .listing-widget-thumb -->' );
+			if ($lang=="en"){
+				if ( '' != get_post_meta( $post->ID, '_listing_open_house', true ) ) {
+					$loop .= sprintf( '<span class="listing-open-house">Open House: %s</span>', get_post_meta( $post->ID, '_listing_open_house', true ) );
+				}
+				$loop .= sprintf( '<div class="listing-widget-details"><h3 class="listing-title"><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
+				$loop .= sprintf( '<p class="listing-address"><span class="listing-address">%s</span><br />', wp_listings_get_address() );
+				$loop .= sprintf( '<span class="listing-city-state-zip">%s, %s %s</span></p>', wp_listings_get_city(), wp_listings_get_state(), get_post_meta( $post->ID, '_listing_zip', true ) );
 
-			if ( '' != get_post_meta( $post->ID, '_listing_open_house', true ) ) {
-				$loop .= sprintf( '<span class="listing-open-house">Open House: %s</span>', get_post_meta( $post->ID, '_listing_open_house', true ) );
-			}
+				if ( '' != get_post_meta( $post->ID, '_listing_bedrooms', true ) || '' != get_post_meta( $post->ID, '_listing_bathrooms', true ) || '' != get_post_meta( $post->ID, '_listing_sqft', true )) {
+					$loop .= sprintf( '<ul class="listing-beds-baths-sqft"><li class="beds">%s<span>Beds</span></li> <li class="baths">%s<span>Baths</span></li> <li class="sqft">%s<span>Sq ft</span></li></ul>', get_post_meta( $post->ID, '_listing_bedrooms', true ), get_post_meta( $post->ID, '_listing_bathrooms', true ), get_post_meta( $post->ID, '_listing_sqft', true ) );
+				}
+			}else{
+				if ( '' != get_post_meta( $post->ID, '_listing_open_house', true ) ) {
+					$loop .= sprintf( '<span class="listing-open-house">开放日: %s</span>', get_post_meta( $post->ID, '_listing_open_house', true ) );
+				}
+				$loop .= sprintf( '<div class="listing-widget-details"><h3 class="listing-title"><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
+				$loop .= sprintf( '<p class="listing-address"><span class="listing-address">%s</span><br />', wp_listings_get_address() );
+				$loop .= sprintf( '<span class="listing-city-state-zip">%s, %s %s</span></p>', wp_listings_get_city(), wp_listings_get_state(), get_post_meta( $post->ID, '_listing_zip', true ) );
 
-			$loop .= sprintf( '<div class="listing-widget-details"><h3 class="listing-title"><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
-			$loop .= sprintf( '<p class="listing-address"><span class="listing-address">%s</span><br />', wp_listings_get_address() );
-			$loop .= sprintf( '<span class="listing-city-state-zip">%s, %s %s</span></p>', wp_listings_get_city(), wp_listings_get_state(), get_post_meta( $post->ID, '_listing_zip', true ) );
-
-			if ( '' != get_post_meta( $post->ID, '_listing_bedrooms', true ) || '' != get_post_meta( $post->ID, '_listing_bathrooms', true ) || '' != get_post_meta( $post->ID, '_listing_sqft', true )) {
-				$loop .= sprintf( '<ul class="listing-beds-baths-sqft"><li class="beds">%s<span>Beds</span></li> <li class="baths">%s<span>Baths</span></li> <li class="sqft">%s<span>Sq ft</span></li></ul>', get_post_meta( $post->ID, '_listing_bedrooms', true ), get_post_meta( $post->ID, '_listing_bathrooms', true ), get_post_meta( $post->ID, '_listing_sqft', true ) );
+				if ( '' != get_post_meta( $post->ID, '_listing_bedrooms', true ) || '' != get_post_meta( $post->ID, '_listing_bathrooms', true ) || '' != get_post_meta( $post->ID, '_listing_sqft', true )) {
+					$loop .= sprintf( '<ul class="listing-beds-baths-sqft"><li class="beds">%s<span>卧室</span></li> <li class="baths">%s<span>浴室</span></li> <li class="sqft">%s<span>平方尺</span></li></ul>', get_post_meta( $post->ID, '_listing_bedrooms', true ), get_post_meta( $post->ID, '_listing_bathrooms', true ), get_post_meta( $post->ID, '_listing_sqft', true ) );
+				}
 			}
 
 			$loop .= sprintf('</div><!-- .listing-widget-details -->');
@@ -137,7 +154,6 @@ get_header(); ?>
 	</section><!-- #primary -->
 
 <?php
-echo do_shortcode( '[listings]' );
 // get_sidebar( 'content' );
 // get_sidebar();
 get_footer();
