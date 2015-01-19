@@ -1407,6 +1407,9 @@ clear:both;
 	margin-right: auto;
 	display: table;
 	margin-top: 30px;
+	padding: 36px;
+	border-radius: 3px;
+	background: #eee;
 }
 
 .content_left{
@@ -1426,4 +1429,21 @@ clear:both;
 	padding: 5px;
 	background: #eee;
 	border-radius: 3px;
+}
+
+.contact-mid-content{
+	padding: 20px;
+}
+
+.contact-mid-content .left-col{
+	display: inline-block;
+	width: 40%;
+	float: left;
+	margin-top: 44px;
+	padding: 20px;
+}
+
+.contact-mid-content .right-col{
+	display: inline-block;
+	width: 50%;
 }
