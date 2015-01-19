@@ -27,9 +27,7 @@ get_header(); ?>
 
 ?>
 <div class="content_left ">
-<div class="page_content_wrapper">
-<h1 class="title-h1 post-title p_b20"><?php the_title();?></h1>
-<div class="page_content the_content">
+<div class="page_content_wrapper"><div class="page_content the_content">
  <?php the_content();?>
  <?php
 			wp_link_pages( array(

@@ -1393,3 +1393,37 @@ clear:both;
 	display:inline-block;
 	margin:0 15px 15px 0;
 }
+
+/*custom styling*/
+.content_right{
+	margin-top: 127px
+}
+.content_right .listings-search{
+	margin-bottom:22px;
+}
+
+#cntctfrm_contact_form{
+	margin-left: auto;
+	margin-right: auto;
+	display: table;
+	margin-top: 30px;
+}
+
+.content_left{
+	margin-top:108px;
+}
+
+.achievement-pic{
+	display:inline-block;
+}
+
+.achievement-pic img{
+	width:106px;
+	height:auto;
+}
+
+.achievement-content .right-column{
+	padding: 5px;
+	background: #eee;
+	border-radius: 3px;
+}
