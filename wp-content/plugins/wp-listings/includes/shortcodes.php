@@ -62,7 +62,10 @@ function wp_listings_shortcode($atts, $content = null) {
      */
     global $post;
 
-    $lang=$_GET['lang'];
+    $lang = "";
+    if (isset($_GET['lang'])){
+        $lang=$_GET['lang'];
+    }
 
     $listings_array = get_posts( $query_args );
 

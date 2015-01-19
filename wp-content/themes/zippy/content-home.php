@@ -17,7 +17,10 @@
 			<img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/mandy-busn_1.jpg">
 		</div>
 		<?php
-			$lang = $_GET['lang'];
+			$lang = "";
+			if (isset($_GET['lang'])){
+				$lang = $_GET['lang'];
+			}
 			$out = "";
 			$out.='<div class="profile-address">';
 			$out.='<div>3107 Kingsway</div>';

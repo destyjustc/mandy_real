@@ -25,7 +25,10 @@
 	<div class="tele">604.720.1822</div>
 	<?php
 		$out = "";
-		$lang = $_GET['lang'];
+		$lang = "";
+		if (isset($_GET['lang'])){
+			$lang = $_GET['lang'];
+		}
 		if ($lang!='en'){
 			$out .= '<div>电话: 604-720-1822</div>';
 			$out .= '<div>传真: 604-439-0512</div>';

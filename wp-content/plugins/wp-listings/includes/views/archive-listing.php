@@ -13,7 +13,10 @@ function archive_listing_loop() {
 		global $post;
 
 		$count = 0; // start counter at 0
-		$lang = $_GET['lang'];
+		$lang = "";
+		if (isset($_GET['lang'])){
+			$lang = $_GET['lang'];
+		}
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
 
@@ -30,13 +33,15 @@ function archive_listing_loop() {
 			$loop .= sprintf( '<div class="listing-thumb-meta">' );
 			if($lang=="en"){
 				if ( '' != get_post_meta( $post->ID, '_listing_text', true ) ) {
-					$loop .= sprintf( '<span class="listing-text">%s</span>', explode("/",get_post_meta( $post->ID, '_listing_text', true ))[0] );
+					$tmp = explode("/",get_post_meta( $post->ID, '_listing_text', true ));
+					$loop .= sprintf( '<span class="listing-text">%s</span>', $tmp[0] );
 				} elseif ( '' != wp_listings_get_property_types() ) {
 					$loop .= sprintf( '<span class="listing-property-type">%s</span>', wp_listings_get_property_types() );
 				}
 			}else{
 				if ( '' != get_post_meta( $post->ID, '_listing_text', true ) ) {
-					$loop .= sprintf( '<span class="listing-text">%s</span>', explode("/",get_post_meta( $post->ID, '_listing_text', true ))[1] );
+					$tmp = explode("/",get_post_meta( $post->ID, '_listing_text', true ));
+					$loop .= sprintf( '<span class="listing-text">%s</span>', $tmp[1] );
 				} elseif ( '' != wp_listings_get_property_types() ) {
 					$loop .= sprintf( '<span class="listing-property-type">%s</span>', wp_listings_get_property_types() );
 				}
