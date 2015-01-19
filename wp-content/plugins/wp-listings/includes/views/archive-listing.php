@@ -126,7 +126,7 @@ if (function_exists('equity')) {
 get_header(); ?>
 
 	<section id="primary" class="content-area container inner">
-		<div id="content" class="site-content" role="main">
+		<div id="content" class="site-content content_left" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -156,11 +156,17 @@ get_header(); ?>
 			?>
 
 		</div><!-- #content -->
+		<div class="content_right">
+			<?php
+				get_sidebar();
+			?>
+			<p>hello</p>
+		</div>
 	</section><!-- #primary -->
 
 <?php
 // get_sidebar( 'content' );
-// get_sidebar();
+
 get_footer();
 
 }

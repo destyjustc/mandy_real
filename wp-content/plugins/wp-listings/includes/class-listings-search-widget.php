@@ -23,7 +23,6 @@ class WP_Listings_Search_Widget extends WP_Widget {
 		global $_wp_listings_taxonomies;
 
 		$listings_taxonomies = $_wp_listings_taxonomies->get_taxonomies();
-		var_dump($listings_taxonomies);
 
 		extract( $args );
 
@@ -80,8 +79,8 @@ class WP_Listings_Search_Widget extends WP_Widget {
 		<?php
 		foreach ( (array) $listings_taxonomies as $tax => $data ) {
 			$terms = get_terms( $tax );
-			// if ( empty( $terms ) )
-			// 	continue;
+			if ( empty( $terms ) )
+				continue;
 			
 			$checked = isset( $instance[ $tax ] ) && $instance[ $tax ];
 
