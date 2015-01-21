@@ -1459,3 +1459,8 @@ clear:both;
 .nav-molu{
 	height:60px;
 }
+
+.zh-title{
+	margin-left:54%;
+	border-bottom:none !important;
+}
