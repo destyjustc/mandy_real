@@ -36,9 +36,9 @@ get_header(); ?>
 			) );
 		?>
    <?php 
-echo '<div class="comment-wrapper">';
+//echo '<div class="comment-wrapper">';
 // comments_template(); 
-echo '</div>';
+//echo '</div>';
 	?>	
  </div>
  <?php edit_post_link( __( 'Edit', 'zippy' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>

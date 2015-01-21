@@ -32,6 +32,11 @@ class WP_Listings_Search_Widget extends WP_Widget {
 
 		echo '<form role="search" method="get" id="searchform_lst" action="' . home_url( '/' ) . '" ><input type="hidden" value="" name="s" /><input type="hidden" value="listing" name="post_type" />';
 
+		$lang = "";
+		if (isset($_GET['lang'])){
+			$lang = $_GET['lang'];
+		}
+
 		foreach ( $listings_taxonomies as $tax => $data ) {
 			if ( ! isset( $instance[$tax] ) || ! $instance[$tax] )
 				continue;
@@ -42,14 +47,29 @@ class WP_Listings_Search_Widget extends WP_Widget {
 
 			$current = ! empty( $wp_query->query_vars[$tax] ) ? $wp_query->query_vars[$tax] : '';
 			echo "<select name='$tax' id='$tax' class='wp-listings-taxonomy'>\n\t";
-			echo '<option value="" ' . selected( $current == '', true, false ) . ">{$data['labels']['name']}</option>\n";
+			if ($lang != 'en'){
+				$voc = $data['labels']['name'];
+				if ($voc == 'Status'){
+					$voc = "楼盘状态";
+				}else if($voc=='Locations'){
+					$voc="城市区域";
+				}else if($voc=="Property Types"){
+					$voc="楼盘类型";
+				}
+				echo '<option value="" ' . selected( $current == '', true, false ) . ">{$voc}</option>\n";
+			}else{
+				echo '<option value="" ' . selected( $current == '', true, false ) . ">{$data['labels']['name']}</option>\n";
+			}
 			foreach ( (array) $terms as $term )
 				echo "\t<option value='{$term->slug}' " . selected( $current, $term->slug, false ) . ">{$term->name}</option>\n";
 
 			echo '</select>';
 		}
-
-		echo '<div class="btn-search"><button type="submit" class="searchsubmit"><i class="fa fa-search"></i><span class="button-text">'. esc_attr( $instance['button_text'] ) .'</span></button></div>';
+		if ($lang!='en'){
+			echo '<div class="btn-search"><button type="submit" class="searchsubmit"><i class="fa fa-search"></i><span class="button-text">'."搜索".'</span></button></div>';
+		}else{
+			echo '<div class="btn-search"><button type="submit" class="searchsubmit"><i class="fa fa-search"></i><span class="button-text">'. esc_attr( $instance['button_text'] ) .'</span></button></div>';
+		}
 		echo '<div class="clear"></div>
 		</form>';
 

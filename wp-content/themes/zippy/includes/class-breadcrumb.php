@@ -24,26 +24,26 @@ if(!class_exists('zippy_breadcrumb'))
 		$markup = $this->options['before'].$this->options['delimiter'].$this->options['after'];
 		
 		global $post;
-		echo '<p class="breadcrumb"><a href="'.get_bloginfo('url').'">';
-			_e("Home",'zippy');
-			echo "</a>";
-			if(!is_front_page()){echo $markup;}
+		// echo '<p class="breadcrumb"><a href="'.get_bloginfo('url').'">';
+		// 	_e("Home",'zippy');
+		// 	echo "</a>";
+		// 	if(!is_front_page()){echo $markup;}
 					
-			$output = $this->zippy_simple_breadcrumb_case($post);
+		// 	$output = $this->zippy_simple_breadcrumb_case($post);
 			
-			echo "<span class='current_crumb'>";
-			if ( is_page() || is_single()) {
-			if(is_front_page()){
-			echo $markup;
-			the_title();
-			}else{
-			the_title();
-			}
+		// 	echo "<span class='current_crumb'>";
+		// 	if ( is_page() || is_single()) {
+		// 	if(is_front_page()){
+		// 	echo $markup;
+		// 	the_title();
+		// 	}else{
+		// 	the_title();
+		// 	}
 			
-			}else{
-			echo $output;
-			}
-			echo " </span></p>";
+		// 	}else{
+		// 	echo $output;
+		// 	}
+		// 	echo " </span></p>";
 		}
 		
 		function zippy_simple_breadcrumb_case($der_post)
