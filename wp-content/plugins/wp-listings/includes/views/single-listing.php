@@ -6,7 +6,10 @@
  * @since 0.1.0
  */
 
-$lang = $_GET['lang'];
+$lang = "";
+if (isset($_GET['lang'])){
+	$lang = $_GET['lang'];
+}
 
 add_action('wp_enqueue_scripts', 'enqueue_single_listing_scripts');
 function enqueue_single_listing_scripts() {
@@ -63,7 +66,10 @@ function trans_label($label){
 }
 
 function single_listing_post_content() {
-	$lang = $_GET['lang'];
+	$lang = "";
+	if (isset($_GET['lang'])){
+		$lang = $_GET['lang'];
+	}
 	global $post;
 
 	?>
