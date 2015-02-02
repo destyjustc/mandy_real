@@ -41,7 +41,7 @@
     <img src="<?php echo zippy_options_array('logo'); ?>" alt="<?php bloginfo('name'); ?>" />
     <?php }else{ ?><span class="site-name"><?php bloginfo('name'); ?></span><?php }?></a>
 	</div>
-	<div class="icon-two"><img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/medallion_logo_20001.jpg"></div>
+	<div class="icon-two"><img src="http://mandyliang.com/wp-content/uploads/2015/02/medallion_logo_2000.jpg"></div>
 	</div>
 </div> <!-- header content inner end -->
 <div id="nav">

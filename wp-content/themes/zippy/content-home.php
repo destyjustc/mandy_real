@@ -14,7 +14,7 @@
 <div class="home-content">
 	<div class="left-column">
 		<div class="profile-image">
-			<img src="http://www.haoyummy.com/mandyliang/wp-content/uploads/2015/01/mandy-busn_1.jpg">
+			<img src="http://mandyliang.com/wp-content/uploads/2015/02/mandy-busn_1.jpg">
 		</div>
 		<?php
 			$lang = "";
